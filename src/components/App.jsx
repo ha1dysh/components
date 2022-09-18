@@ -1,4 +1,4 @@
-import { data, user, transactions, friends } from 'json';
+import { data, user } from 'json';
 
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
