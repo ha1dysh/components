@@ -5,6 +5,7 @@
   margin: auto;
   background-color: #fff;
   border-radius: 4px;
+  margin-bottom: 25px;
 }
 
 .title {
@@ -34,10 +35,4 @@
 
 .item + .item {
   border-left: 1px solid rgb(0, 0, 0, 0.2);
-}
-
-.label {
-}
-
-.percentage {
 }
