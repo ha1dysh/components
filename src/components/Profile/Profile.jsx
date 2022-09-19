@@ -1,7 +1,18 @@
 import PropTypes from 'prop-types';
-import styles from './Profile.module.css';
+import {
+  Avatar,
+  Description,
+  Profile,
+  Tag,
+  Username,
+  Location,
+  Stats,
+  ListItem,
+  Label,
+  Quantity,
+} from './Profile.styled';
 
-export default function Profile({
+export default function ProfileCard({
   username,
   tag,
   location,
@@ -9,29 +20,29 @@ export default function Profile({
   avatar,
 }) {
   return (
-    <div className={styles.profile}>
-      <div className={styles.description}>
-        <img src={avatar} alt="User avatar" className={styles.avatar} />
-        <p className={styles.username}>{username}</p>
-        <p className={styles.tag}>@{tag}</p>
-        <p className={styles.location}>{location}</p>
-      </div>
+    <Profile>
+      <Description>
+        <Avatar src={avatar} alt="User avatar" />
+        <Username>{username}</Username>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
+      </Description>
 
-      <ul className={styles.stats}>
-        <li>
-          <span className={styles.label}>Followers</span>
-          <span className={styles.quantity}>{followers}</span>
-        </li>
-        <li>
-          <span className={styles.label}>Views</span>
-          <span className={styles.quantity}>{views}</span>
-        </li>
-        <li>
-          <span className={styles.label}>Likes</span>
-          <span className={styles.quantity}>{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <Stats>
+        <ListItem>
+          <Label>Followers</Label>
+          <Quantity>{followers}</Quantity>
+        </ListItem>
+        <ListItem>
+          <Label>Views</Label>
+          <Quantity>{views}</Quantity>
+        </ListItem>
+        <ListItem>
+          <Label>Likes</Label>
+          <Quantity>{likes}</Quantity>
+        </ListItem>
+      </Stats>
+    </Profile>
   );
 }
 
