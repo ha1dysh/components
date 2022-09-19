@@ -1,8 +1,6 @@
 import { Table, Thead, Tr } from './Transactions.styled';
 
 export default function Transactions({ transactions }) {
-  console.log(transactions);
-
   return (
     <Table>
       <Thead>
@@ -14,11 +12,11 @@ export default function Transactions({ transactions }) {
       </Thead>
 
       <tbody>
-        {transactions.map(e => (
-          <Tr key={e.id}>
-            <td>{e.type}</td>
-            <td>{e.amount}</td>
-            <td>{e.currency}</td>
+        {transactions.map(({ id, type, amount, currency }) => (
+          <Tr key={id}>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
           </Tr>
         ))}
       </tbody>
